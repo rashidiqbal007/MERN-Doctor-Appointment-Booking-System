@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Common styling */
+.card {
+  box-shadow: 0 0 2px gray;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.normal-text {
+  font-size: 1rem;
+}
+
+.anchor {
+  text-decoration: underline;
+  color: black;
+  font-size: 1rem;
+}
+
+
+/* authentication pages */
+.authentication {
+
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  border-color: aqua;
+  background-color: #005555;
+  /* background-image: "./client/public/images/backgroung.svg"; */
+  
+}
+
+.authentication-form {
+  width: 400px;
+}
+
+.card-title {
+  background-color: orange;
+  color: white;
+  max-width: max-content;
+  padding: 7px 15px;
+  margin-left: -40px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-bottom-left-radius: 10px;
+}
+
+.primary-button {
+  background-color: #005555 !important;
+  width: 100%;
+  height: 40px;
+  color: white !important;
+  font-size: 16px;
+  border: 0;
+}
