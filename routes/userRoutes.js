@@ -5,6 +5,7 @@ require('dotenv').config()
 const User = require("../models/userModel")
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const authMiddleware = require("../Middlewares/authMiddlewares")
 
 
 // api         callback        
@@ -58,6 +59,7 @@ router.post("/login", async (req, res) => {
             res.status(200).send({ message: "Incorrect Password!", success: false });
         }
         else {
+            // encrypting user id only
             const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
                 expiresIn: "1h",
             })
@@ -72,5 +74,34 @@ router.post("/login", async (req, res) => {
 
     }
 });
+
+router.post("/get-user-info-by-id", authMiddleware, async (req, res) => {
+    try {
+        const user = await User.findOne({ _id: req.body.userId });
+        if (!user) {
+            return res.status(200).send({
+                message: "User does not Exist",
+                success: false
+            });
+        }
+        else{
+            res.status(200).send({
+                message:"User found & sending his details to frontend",
+                success: true,
+                data: {
+                    name: user.name,
+                    email: user.email,
+
+                },
+            })
+        }
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({ message: "Error logging in", success: false, error });
+
+    }
+        
+    })
 
 module.exports = router;
