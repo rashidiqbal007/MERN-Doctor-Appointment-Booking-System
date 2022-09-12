@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rashidiqbal007/MERN-Doctor-Appointment-Booking-System#readme",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
     "antd": "^4.23.0",
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
@@ -28,6 +29,7 @@
     "mongoose": "^6.5.4",
     "nodemon": "^2.0.19",
     "react-hot-toast": "^2.3.0",
+    "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
     "redux": "^4.2.0",
     "redux-toolkit": "^1.1.2"

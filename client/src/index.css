@@ -38,6 +38,12 @@ code {
   color: black;
   font-size: 1rem;
 }
+.spinner-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 
 /* authentication pages */

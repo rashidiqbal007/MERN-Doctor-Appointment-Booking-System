@@ -1,14 +1,15 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
+import Layout from '../Components/Layout'
 
 function Home() {
-  const getData = async (req, res) => {
+  const getData = async () => {
     try {
                                                              //  payload has to be empty
       const response = await axios.post("/api/user/get-user-info-by-id", {} ,
         {
-          header: {
+          headers: {
             Authorization: 'Bearer ' + localStorage.getItem('token'),
           },
         })
@@ -26,13 +27,16 @@ function Home() {
     getData()
 
 
-  }, [])
+  }, []);
 
 
 
 
   return (
-    <h1>hello</h1>
+    <Layout>
+       <h1>Homepage</h1>
+    </Layout>
+   
   )
 }
 

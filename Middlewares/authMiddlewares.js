@@ -10,23 +10,27 @@ module.exports = async (req, res, next) => {
         jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
 
             if (err) {
+                console.log(err)
                 return res.status(401).send({
                     message: "Auth Failed, Token Invalid!",
-                    success: false
+                    success: false,
                 });
             }
+            
             // else will have success part and we call next function, reqbody we will attach user id
             else {
                 req.body.userId = decoded.id;
+                
                 next();
+            //    console.log("token verified")
             }
 
         });
     } catch (error) {
         return res.status(401).send({
             message: "Auth Failed.",
-            success: false
+            success: false,
         }
         );
     }
-}
+} 
