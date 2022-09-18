@@ -5,10 +5,13 @@ const dbConfig = require("./config/dbconfig.js")
 // to destructure json
 app.use(express.json());
 const userRoute = require("./routes/userRoutes")
+const adminRoute = require("./routes/adminRoutes")
 
 
-// whenever api req is coming with word user, go and search api endpoints in the userRoute
+// whenever api req is coming with word api/user, go and search api endpoints in the userRoute
 app.use("/api/user" , userRoute);
+
+app.use("/api/admin" , adminRoute);
 
 const port = process.env.PORT || 5000;
 app.listen(port,  () => {

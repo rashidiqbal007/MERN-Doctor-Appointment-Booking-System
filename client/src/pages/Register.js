@@ -4,7 +4,7 @@ import {Link, useNavigate} from "react-router-dom"
 import axios from 'axios'
 import toast from "react-hot-toast"
 import { useDispatch } from 'react-redux'
-import { showLoading } from '../redux/alertsSlice'
+import { showLoading , hideLoading} from '../redux/alertsSlice'
 
 function Register() {
   
@@ -48,9 +48,11 @@ function Register() {
             <Input type='password' placeholder = "Password"/>
           </Form.Item>
 
-          <Button className='primary-button my-2' htmlType="submit">Register</Button>
+         <div className="d-flex flex-column">
+         <Button className='full-width-button my-2 ' htmlType="submit">Register</Button>
 
-          <Link to='/login' className="anchor p-2 ">Click here to Login</Link>
+<Link to='/login' className="anchor p-2 justify-content-end">Click here to Login</Link>
+         </div>
         </Form>
       
 

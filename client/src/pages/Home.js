@@ -6,8 +6,8 @@ import Layout from '../Components/Layout'
 function Home() {
   const getData = async () => {
     try {
-                                                             //  payload has to be empty
-      const response = await axios.post("/api/user/get-user-info-by-id", {} ,
+      //  payload has to be empty
+      const response = await axios.post("/api/user/get-user-info-by-id", {},
         {
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('token'),
@@ -34,9 +34,10 @@ function Home() {
 
   return (
     <Layout>
-       <h1>Homepage</h1>
+      {/* whatever rendered inside layout component is prop/children that can be used anywhere in layout.js func comp */}
+      <h1>Homepage</h1>
     </Layout>
-   
+
   )
 }
 

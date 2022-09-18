@@ -37,12 +37,42 @@ code {
   text-decoration: underline;
   color: black;
   font-size: 1rem;
+  cursor: pointer;
 }
 .spinner-parent {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+.remix-icons{
+  font-size: 30px;
+  cursor: pointer;
+  padding-left: 10px;
+  opacity: .7;
+  
+}
+.page-title{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.remix-icons:hover{
+  opacity: 1;
+}
+.full-width-button{
+  width: 100%;
+  background-color: #005555 !important;
+  width: 100%;
+  height: 40px;
+  color: white !important;
+  font-size: 16px;
+  border: 0;
+}
+.full-width-button:hover{
+  background-color: orange!important;
+  color: white !important;
+  
 }
 
 
@@ -81,4 +111,5 @@ code {
   color: white !important;
   font-size: 16px;
   border: 0;
+  width: max-content !important;
 }
