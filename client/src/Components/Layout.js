@@ -10,7 +10,7 @@ function Layout({ children }) {
     const navigate = useNavigate;
     const { user } = useSelector((state) => state.user)
     const unseenNotificationslength = user?.unseenNotifications?.length;
-    console.log(user);
+    // console.log(user);
     const [Collapsed, setCollapsed] = useState(false);
     const userMenu = [
         {
@@ -58,10 +58,28 @@ function Layout({ children }) {
         }
 
 
+    ]  
+    const DoctorMenu = [
+        {
+            name: "Home",
+            path: "/",
+            icon: "ri-home-line",
+        },
+        {
+            name: "Appointments",
+            path: "/doctor/appointments",
+            icon: "ri-file-list-line",
+        },
+        {
+            name: "Profile",
+            path: `/doctor/profile/${user?._id}`,
+            icon: "ri-user-line",
+        }
+
     ]
     // this is bcz to check which menu is it and then render that one
-    const menuToBeRendered = user?.isAdmin ? adminMenu : userMenu;
-
+    const menuToBeRendered = user?.isAdmin ? adminMenu : user?.isDoctor ? DoctorMenu : userMenu;
+    const role = user?.isAdmin ? "Admin" : user?.isDoctor ? "Doctor" : "User";   
 
     return (
         <div className='main'>
@@ -72,6 +90,7 @@ function Layout({ children }) {
                     <div className="sidebar-header">
                         VISION-X
                     </div>
+                    <h1 className="role">{role}</h1>
                     <div className="menu">
                         {/* mapping the icons etc from the usermenu array */}
                         {menuToBeRendered.map((menu) => {

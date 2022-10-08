@@ -6,6 +6,7 @@ import toast from "react-hot-toast"
 import { useSelector, useDispatch } from 'react-redux'
 import { hideLoading, showLoading } from '../redux/alertsSlice'
 
+
 function Login() {
   // redux alertloader
   const dispatch = useDispatch()
@@ -40,6 +41,7 @@ function Login() {
 
   return (
     <div className='authentication'>
+      {/* <img src={backgroundimage} alt="" className="background" /> */}
       <div className='authentication-form card p-3'>
 
 

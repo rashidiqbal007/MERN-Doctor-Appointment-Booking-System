@@ -13,6 +13,10 @@ import Notifications from "./pages/Notifications.js";
 import DoctorsList from "./pages/Admin/DoctorsList.js";
 import UsersList from "./pages/Admin/UsersList.js";
 import Profile from "./pages/Profile.js";
+import DocProfile from "./pages/Doctor/DocProfile"
+import BookAppointment from "./pages/BookAppointment.js";
+import Appointments from "./pages/Appointments.js";
+import DoctorAppointments from "./pages/Doctor/DoctorAppointments.js";
 
 
 function App() {
@@ -34,6 +38,13 @@ function App() {
           <Route path="/admin/doctorslist" element={<ProtectedRoute><DoctorsList /></ProtectedRoute>} />
           <Route path="/admin/userslist" element={<ProtectedRoute><UsersList /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/doctor/profile/:userId" element={<ProtectedRoute><DocProfile /></ProtectedRoute>} />
+          <Route path="/book-appointment/:doctorId" element={<ProtectedRoute><BookAppointment /></ProtectedRoute>} />
+          <Route path="/appointments" element={<ProtectedRoute><Appointments /></ProtectedRoute>} />
+          <Route path="/doctor/appointments" element={<ProtectedRoute><DoctorAppointments /></ProtectedRoute>} />
+
+
+
 
         </Routes>
 

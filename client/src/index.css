@@ -11,7 +11,7 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
 }
 
 code {
@@ -22,6 +22,11 @@ code {
 /* Common styling */
 .card {
   box-shadow: 0 0 2px gray;
+}
+
+.card:hover {
+  box-shadow: 0 0 5px gray;
+  color: #031D44;;
 }
 
 .card-title {
@@ -39,40 +44,45 @@ code {
   font-size: 1rem;
   cursor: pointer;
 }
+
 .spinner-parent {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-.remix-icons{
+
+.remix-icons {
   font-size: 30px;
   cursor: pointer;
   padding-left: 10px;
   opacity: .7;
-  
+
 }
-.page-title{
+
+.page-title {
   font-size: 25px;
   font-weight: bold;
 }
 
-.remix-icons:hover{
+.remix-icons:hover {
   opacity: 1;
 }
-.full-width-button{
+
+.full-width-button {
   width: 100%;
-  background-color: #005555 !important;
+  background-color: #031D44 !important;
   width: 100%;
   height: 40px;
   color: white !important;
   font-size: 16px;
   border: 0;
 }
-.full-width-button:hover{
-  background-color: orange!important;
+
+.full-width-button:hover {
+  background-color: orange !important;
   color: white !important;
-  
+
 }
 
 
@@ -84,9 +94,14 @@ code {
   align-items: center;
   display: flex;
   border-color: aqua;
-  background-color: #005555;
-  /* background-image: "./client/public/images/backgroung.svg"; */
-  
+  /* background-color: #005555; */
+  background-image: url("../public/images/nonblurbg.jpg");
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  background-size: cover;
+
+
 }
 
 .authentication-form {
@@ -105,11 +120,26 @@ code {
 }
 
 .primary-button {
-  background-color: #005555 !important;
+  background-color: #031D44 !important;
   width: 100%;
   height: 40px;
   color: white !important;
   font-size: 16px;
   border: 0;
   width: max-content !important;
+}
+
+/* doctor page */
+.doctor-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
