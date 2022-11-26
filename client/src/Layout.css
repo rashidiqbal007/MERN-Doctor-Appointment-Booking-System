@@ -57,6 +57,7 @@
     box-shadow: 0 0 2px gray;
     height: 82vh;
     padding: 15px;
+    overflow-x: scroll;
 }
 .menu{
     margin-top: 100px;
