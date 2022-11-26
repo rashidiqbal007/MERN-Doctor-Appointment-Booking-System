@@ -58,7 +58,7 @@ function UsersList() {
                 render: (text, record) => (
                     <div className='d-flex'>
                         <h1 className='anchor'>
-                            Block
+                            Block.
                         </h1>
                     </div>
                 )},
