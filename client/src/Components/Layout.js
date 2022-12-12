@@ -58,7 +58,7 @@ function Layout({ children }) {
         }
 
 
-    ]  
+    ]
     const DoctorMenu = [
         {
             name: "Home",
@@ -79,7 +79,7 @@ function Layout({ children }) {
     ]
     // this is bcz to check which menu is it and then render that one
     const menuToBeRendered = user?.isAdmin ? adminMenu : user?.isDoctor ? DoctorMenu : userMenu;
-    const role = user?.isAdmin ? "Admin" : user?.isDoctor ? "Doctor" : "User";   
+    const role = user?.isAdmin ? "Admin" : user?.isDoctor ? "Doctor" : "User";
 
     return (
         <div className='main'>
@@ -101,7 +101,14 @@ function Layout({ children }) {
                             </div>
                         }
                         )}
-
+                        <div className='d-flex menu-item'>
+                            <i className="ri-eye-2-line" ></i>
+                            {!Collapsed && <a href='https://visionxgazekeyboard.netlify.app/' target="_blank" >Virtual Keyboard</a>}
+                        </div>
+                        <div className='d-flex menu-item'>
+                            <i className="ri-body-scan-line"></i>
+                            {!Collapsed && <a href='https://visionxgazekeyboard.netlify.app/' target="_blank" >Gesture</a>}
+                        </div>
                         <div className='d-flex menu-item' onClick={() => {
                             localStorage.clear();
                             navigate('/')
@@ -111,6 +118,7 @@ function Layout({ children }) {
                             <i className="ri-logout-circle-line"></i>
                             {!Collapsed && <Link to='/login'>Logout</Link>}
                         </div>
+
 
 
 
