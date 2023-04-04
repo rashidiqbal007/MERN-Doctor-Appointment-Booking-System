@@ -50,11 +50,9 @@ router.post("/login", async (req, res) => {
         // first check if email provided matches the email in db or not then we will compare password
         const user = await User.findOne({ email: req.body.email });
 
-        if (!user) {
-            return
-            res.status(400).send({ message: "User does not exist", success: false });
+        if (!user) return res.status(400).send({ message: "User does not exist", success: false });
 
-        }
+
         // bcrypt library compares normal pass with the encrypted password
         const isMatch = await bcrypt.compare(req.body.password, user.password);
         // if ismatch means pass & email is present in db now we will have to generate  token & store in frontend
@@ -258,9 +256,9 @@ router.post("/check-booking-availability", authMiddleware, async (req, res) => {
             })
 
         }
-        else{
+        else {
             return res.status(200).send({
-                message:"Appointments available",
+                message: "Appointments available",
                 success: true,
             })
         }

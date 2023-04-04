@@ -58,9 +58,9 @@ function Login() {
           </Form.Item>
 
           <div className="d-flex flex-column">
-            <Button className='full-width-button my-2' htmlType="submit">Login</Button>
+            <Button className='full-width-button my-2' id = "register-button" htmlType="submit">Login</Button>
 
-            <Link to='/register' className="anchor p-2 ">Click here to Register</Link>
+            <Link to='/register' id="register-tag" className="anchor p-2 ">Click here to Register</Link>
           </div>
         </Form>
 
